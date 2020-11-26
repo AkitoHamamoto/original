@@ -1,0 +1,29 @@
+.manual-content {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  overflow: scroll;
+}
+
+.manual-box {
+  margin: 20px;
+  height: 200px;
+  width: 300px;
+  background-color: rgba(153, 94, 207, 0.76);
+}
+
+.title {
+  font-size: 20px;
+  height: 20%;
+}
+
+
+
+@media (max-width: 1000px) {
+
+}
+@media (max-width: 500px) {
+
+}

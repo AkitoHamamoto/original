@@ -11,7 +11,13 @@
   </div>
   <div class='nav'>
     <ul class='lists-left'>
-      <li><%= link_to 'MENU', "#", class: "category-list" %></li>
+      <li><%= link_to 'MENU', "#", class: "category-list" %>
+        <ul>
+          <li><%= link_to 'TOP PAGE',  root_path %></li>
+          <li><%= link_to 'manual',  posts_path %></li>
+          <li><%= link_to 'chat'%></li>
+        </ul>
+      </li>
       <li><%= link_to 'user.nickname', "#", class: "brand-list" %></li>
     </ul>
     <ul class='lists-right'>
