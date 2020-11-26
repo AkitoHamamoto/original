@@ -1,0 +1,31 @@
+.main {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.mein-content {
+  width: 75vw;
+  height: 100%;
+}
+
+h1 {
+  font-size: 20px;
+  display:block;
+  background-color: bisque;
+}
+
+.board-content {
+  height: 50%;
+}
+
+.plan-content {
+  height: 50%;
+}
+
+@media (max-width: 1000px) {
+
+}
+@media (max-width: 500px) {
+
+}

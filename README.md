@@ -68,9 +68,14 @@
 
 - belong_to :user
 
-### Board テーブル
+### boards テーブル
 
 | Column | Type   | Option       |
 | ------ | ------ | ------------ |
 | text   | string | null:false   |
 
+### plans テーブル
+
+| Column | Type   | Option       |
+| ------ | ------ | ------------ |
+| text   | string | null:false   |
