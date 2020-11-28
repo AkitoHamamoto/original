@@ -18,4 +18,5 @@ class User < ApplicationRecord
     validates :birth_date
     validates :authority
   end
+
 end
