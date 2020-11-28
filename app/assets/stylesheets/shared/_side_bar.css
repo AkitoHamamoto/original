@@ -1,0 +1,33 @@
+.side-content {
+  width: 20vw;
+  height: 100%;
+  background-color: #c4e0b06b;
+  font-size: 20px;
+  border-right: inset 5px rgba(77, 70, 70, 0.685);
+}
+
+.new-messages {
+  height: 50%;
+}
+
+a,.new-messages-content {
+  text-decoration: none;
+  color: black;
+
+}
+a:hover {
+  text-decoration: none;
+  color: rgba(71, 106, 182, 0.863);
+}
+
+.login-user {
+  height: 50%;
+}
+
+@media (max-width: 1000px) {
+
+}
+@media (max-width: 500px) {
+
+}
+

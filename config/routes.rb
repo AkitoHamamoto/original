@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users
+  get 'users/index'
+  root to: 'users#index'
+  resources :users, only:[:index, :edit, :show, :update]
+  resources :posts, only:[:index, :new, :show, :edit]
+  resources :rooms, only:[:new, :create] do
+    resources :messages, only: [:index, :create]
+  end
+
 end

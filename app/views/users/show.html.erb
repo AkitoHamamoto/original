@@ -1,0 +1,39 @@
+<%= render "shared/second.header" %>
+
+<div class="main">
+  <div class='side-bar'>
+    <%= render "shared/side_bar" %>
+  </div>
+
+
+  <div class="users-information">
+    <h2 class="user-information-title">ユーザー情報</h2>
+    <%= link_to 'ユーザー情報を編集する', edit_user_registration_path  %>
+    
+    <%#= render 'shared/error_messages', model: f.object %>
+    <span>users/show</span>
+   
+    <%# 商品の概要 %>
+    <div class="user-show">
+      <div class="user-box">
+        <div class='user-img-content'>
+          <%#= image_tag @item.image ,class:"item-box-img" %>
+        </div>
+        <h2 class="name">
+          <%= @user.nickname %>
+        </h2>
+        <div class="item-price-box">
+          <span class="item-price">
+            <%= @user.email %>
+          </span>
+          <span class="item-postage">
+            <%= @user.birth_date %>
+          </span>
+        </div>
+      </div>
+    </div>
+    <%# /商品の概要 %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
