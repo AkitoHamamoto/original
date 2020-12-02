@@ -4,6 +4,58 @@
   <div class='side-bar'>
     <%= render "shared/side_bar" %>
   </div>
+
+  <%= form_with model: @post, local: true do |f| %>
+
+  <%#= render 'shared/error_messages', model: f.object %>
+
+  <div class="form-wrap">
+    <div class="form-header">
+      <h1>マニュアル情報入力</h1>
+    </div>
+
+    <div class="title-box">
+      <p>テキストナンバー</p>
+      <span class="indispensable">必須</span>
+      <%= f.number_field :number, min: 1, class: "text-number", id:"text-number-id" %>
+    </div>
+
+    <div class="title-box">
+      <p>タイトル</p>
+      <span class="indispensable">必須</span>
+      <%= f.text_area :title, class: "title-text", id:"title-name" %>
+    </div>
+    
+    <div class="video-box">
+      <p>マニュアル動画</p>
+      <span class="indispensable">必須</span>
+      <%= f.file_field :video, class: "post-video", id:"post-video-id" %>
+    </div>
+    <div class="title-box">
+      <p>説明</p>
+      <span class="indispensable">必須</span>
+      <%= f.text_area :text, class: "post-text", id:"post-name" %>
+    </div>
+
+    <div class="file-box">
+      <p>関連資料</p>
+      <%= f.file_field :documents, multiple:true, id:"post-file" %>
+    </div>
+
+    <div class0="image-box">
+      <p>サムネイル画像</p>
+       <%= f.file_field :image, id:"post-image" %>
+    </div>
+
+    <div class="sell-btn-contents">
+      <%= f.submit "投稿する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', "#", class:"back-btn" %>
+    </div>
+
+  </div>
+
+  <% end %>
+
 </div>
 
 <%= render "shared/footer" %>

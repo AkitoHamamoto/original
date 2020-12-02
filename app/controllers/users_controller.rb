@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   def index
+    @boards = Board.all
+    @board = Board.new
+    @plans = Plan.all
+    @plan = Plan.new
   end
+
 
   def show
     @user = User.find(params[:id])
@@ -23,5 +28,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:nickname, :image)
+  end
+
+  def board_params
+    params.require(:board).permit(:text).merge(user_id: current_user.id)
   end
 end

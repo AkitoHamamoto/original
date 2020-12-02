@@ -8,6 +8,9 @@ class User < ApplicationRecord
   # has_many :rooms, through: room_users
   has_many :messages
   has_many :posts
+  has_many :boards
+  has_many :plans
+
 
   with_options presence: true do
     validates :nickname
