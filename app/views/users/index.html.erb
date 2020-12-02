@@ -8,13 +8,48 @@
     <%# 掲示板 %>
     <div class='board-content'>
       <h1>お知らせ・連絡事項</h1>
-      
+      <div class="submit-form">
+        <% if current_user.authority == true %>
+          <%= form_with model: @board,id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
+          <%= f.text_area :text, class:"input-expiration-date", id:"card-exp-month", placeholder:"text" %>
+          <%= f.submit "送信" ,class:"buy-red-btn" %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="boards-box">
+        <% @boards.each do |board| %>
+        <ul class="boards-list">
+          <li>
+            <%= board.text %>
+            <span><%= link_to '削除', board_path(board.id), method: :delete,class:'board-destroy' %></span>
+          </li>
+        </ul>
+        <% end %>
+      </div>
     </div>
     <%#= 今後の予定 %>
     <div class="plan-content">
       <h1>今後の予定</h1>
-
+      <div class="submit-form">
+        <% if current_user.authority == true %>
+          <%= form_with model: @plan, id: 'charge-form', class: 'transaction-form-wrap', local: true do |f| %>
+          <%= f.text_area :text, class:"input-expiration-date", id:"card-exp-month", placeholder:"text" %>
+          <%= f.submit "送信" ,class:"buy-red-btn" %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="plans-box">
+        <% @plans.each do |plan| %>
+        <ul class="plans-list">
+          <li>
+            <%= plan.text %>
+            <span><%= link_to '削除', plan_path(plan.id), method: :delete,class:'board-destroy' %></span>
+          </li>
+        </ul>
+        <% end %>
+      </div>
     </div>
+  
   </div>
 
 </div>

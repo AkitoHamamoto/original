@@ -6,50 +6,30 @@
   </div>
 
   <div class= 'manual-content'>
-    <div class='manual-box'>
-      <p class="title">title</p>
-      <div class="video">video</div>
-    </div>
-    <div class='manual-box'>
-      <p class="title">title</p>
-      <div class="video">video</div>
-    </div>
-    <div class='manual-box'>
-      <p class="title">title</p>
-      <div class="video">video</div>
-    </div>
-    <div class='manual-box'>
-      <p class="title">title</p>
-      <div class="video">video</div>
-    </div>
-    <div class='manual-box'>
-      <p class="title">title</p>
-      <div class="video">video</div>
-    </div>
-    <div class='manual-box'>
-      <p class="title">title</p>
-      <div class="video">video</div>
-    </div>
-    <div class='manual-box'>
-      <p class="title">title</p>
-      <div class="video">video</div>
-    </div>
-    <div class='manual-box'>
-      <p class="title">title</p>
-      <div class="video">video</div>
-    </div>
-    <div class='manual-box'>
-      <p class="title">title</p>
-      <div class="video">video</div>
-    </div>
-    <div class='manual-box'>
-      <p class="title">title</p>
-      <div class="video">video</div>
-    </div>
-    <div class='manual-box'>
-      <p class="title">title</p>
-      <div class="video">video</div>
-    </div>
+
+    <% @posts.each do |post| %>
+    <li class="list">
+      <div class='manual-box'>
+        <%= link_to post_path(post.id) do %>
+          <p class="title">
+            <%= post.number %>
+            <%= post.title %>
+          </p>
+          <% if post.image.attached? %>
+            <div class="video-image">
+              <%= image_tag post.image %>
+            </div>
+          <% else %>
+            <div class="video">
+              <video src="<%= rails_blob_path(post.video) %>" type="video/mp4",controls></video>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </li>
+    <% end %>
+
+   
   </div>
   
   

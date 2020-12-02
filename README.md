@@ -16,6 +16,7 @@
 - has_many :rooms, through: room_users
 - has_many :messages
 - has_many :posts
+- has_many :boards
 
 ## rooms テーブル
 
@@ -51,8 +52,8 @@
 
 ### Association
 
-- belong_to :room
-- belong_to :user
+- belongs_to :room
+- belongs_to :user
 
 ### posts テーブル
 
@@ -60,19 +61,21 @@
 | ------ | ---------- | ----------------------------- |
 | number | integer    | null:false                    |
 | title  | string     | null:false                    |
-| text   | string     | null:false                    |
+| text   | text       | null:false                    |
 | mark   | boolean    | null:false                    |
 | user   | references | null:false, foreign_key: true |
 
 ### Association
 
-- belong_to :user
+- belongs_to :user
 
 ### boards テーブル
 
 | Column | Type   | Option       |
 | ------ | ------ | ------------ |
 | text   | string | null:false   |
+
+- belongs_to :user
 
 ### plans テーブル
 

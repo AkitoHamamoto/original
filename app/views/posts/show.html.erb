@@ -4,6 +4,38 @@
   <div class='side-bar'>
     <%= render "shared/side_bar" %>
   </div>
+
+  <div class="manual-content">
+  <ul class="post-btn">
+    <li><%= link_to '編集', edit_post_path(@post.id),class: "post-red-btn" %></li>
+    <li><%= link_to '削除', post_path(@post.id), method: :delete, class:'post-destroy' %></li>
+  </ul>
+
+    <div class="title-content">
+      <%= @post.title %>
+    </div>
+    <div class="video-content">
+      <video src="<%= rails_blob_path(@post.video) %>" type="video/mp4" controls></video>
+    </div>
+    <div class="text-content">
+      <%= @post.text %>
+    </div>
+    <div class="file">
+      <% if @post.documents.attached? %>
+        <% @post.documents.each do |document| %>
+          <%= image_tag document %>
+        <% end %>
+      <% end %>
+    </div>
+    <%# <div class="form-group"> %>
+      <%#= form_with model: @post do |f| %>
+      <%# <label class="form-text" >既読</label> %>
+      <%#= f.check_box :mark ,{}, "true", "false" %>
+      <%#= f.submit "送信" %>
+      <%# <% end %> 
+    </div>
+  </div>
+
 </div>
 
 <%= render "shared/footer" %>
