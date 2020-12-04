@@ -9,7 +9,7 @@
     <div class='board-content'>
       <h1>お知らせ・連絡事項</h1>
       <div class="submit-form">
-        <% if current_user.authority == true %>
+        <% if user_signed_in? && current_user.authority == true %>
           <%= form_with model: @board,id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
           <%= f.text_area :text, class:"input-expiration-date", id:"card-exp-month", placeholder:"text" %>
           <%= f.submit "送信" ,class:"buy-red-btn" %>
@@ -31,7 +31,7 @@
     <div class="plan-content">
       <h1>今後の予定</h1>
       <div class="submit-form">
-        <% if current_user.authority == true %>
+        <% if user_signed_in? && current_user.authority == true %>
           <%= form_with model: @plan, id: 'charge-form', class: 'transaction-form-wrap', local: true do |f| %>
           <%= f.text_area :text, class:"input-expiration-date", id:"card-exp-month", placeholder:"text" %>
           <%= f.submit "送信" ,class:"buy-red-btn" %>
