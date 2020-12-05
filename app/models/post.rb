@@ -9,7 +9,14 @@ class Post < ApplicationRecord
     validates :number,  uniqueness: true, format: { with: PRICE_REGEX, message: 'テキストナンバーは半角数字のみ保存可能です' }
     validates :title
     validates :text
-   
+  end
+
+  def self.search(search)
+    if search != ""
+      Post.where('title LIKE(?)',"%#{search}%")
+    else
+      Post.all
+    end
   end
 
 end

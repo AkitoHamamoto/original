@@ -1,10 +1,6 @@
 <%= render "shared/second.header" %>
 
 <div class="main">
-  <div class='side-bar'>
-    <%= render "shared/side_bar" %>
-  </div>
-
   <%= form_with model: @post, local: true do |f| %>
 
   <%#= render 'shared/error_messages', model: f.object %>

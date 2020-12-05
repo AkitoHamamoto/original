@@ -33,6 +33,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def search
+    @posts = Post.search(params[:keyword])
+  end
+
   def destroy
     @post = Post.find(params[:id])
     if current_user.authority == true 
