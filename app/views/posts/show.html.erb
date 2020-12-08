@@ -1,37 +1,76 @@
-<%= render "shared/second.header" %>
+<%= render "shared/header" %>
 
-<div class="main">
-  <div class="manual-content">
-  <ul class="post-btn">
-    <li><%= link_to '編集', edit_post_path(@post.id),class: "post-red-btn" %></li>
-    <li><%= link_to '削除', post_path(@post.id), method: :delete, class:'post-destroy' %></li>
-  </ul>
+<div class="main-manual-show">
+  <div class="manual-content-show">
+    <ul class="post-btn">
+      <li class="edit-btn"><%= link_to '編集', edit_post_path(@post.id),class: "post-red-btn" %></li>
+      <li class="destroy-btn"><%= link_to '削除', post_path(@post.id), method: :delete, class:'post-destroy' %></li>
+    </ul>
+
+    <div class="video-content">
+      <video src="<%= rails_blob_path(@post.video) %>" type="video/mp4" controls></video>
+    </div>
 
     <div class="title-content">
       <%= @post.title %>
     </div>
-    <div class="video-content">
-      <video src="<%= rails_blob_path(@post.video) %>" type="video/mp4" controls></video>
-    </div>
+
     <div class="text-content">
       <%= @post.text %>
     </div>
+
+    <div class="form-group-mark"> 
+      <%= form_with model: @post do |f| %>
+        <%= f.check_box :mark ,{}, "true", "false" %>
+        <%= f.label :既読 %>
+        <%= f.submit "送信" %>
+      <% end %> 
+    </div>
+
     <div class="file">
       <% if @post.documents.attached? %>
-        <% @post.documents.each do |document| %>
-          <%= image_tag document %>
-        <% end %>
+        <%# @post.documents.each do |document| %>
+        <%= link_to @post.documents %>
+          <span class="material-icons" id="text-file">
+            text_snippet
+            <%#= image_tag document %>
+          </span>
+        <%# end %>
       <% end %>
-    </div>
-    <%# <div class="form-group"> %>
-      <%#= form_with model: @post do |f| %>
-      <%# <label class="form-text" >既読</label> %>
-      <%#= f.check_box :mark ,{}, "true", "false" %>
-      <%#= f.submit "送信" %>
-      <%# <% end %> 
     </div>
   </div>
 
+  <div class="side-manual-lists">
+    <ul>
+    <% @posts.each do |post| %>
+      <%= link_to post_path(post.id),class:"manual-lists" do %>
+      <li class="side-manual-box">
+        <div class="side-video">
+          <% if post.image.attached? %>
+            <div class="video-image">
+              <%= image_tag post.image %>
+            </div>
+          <% else %>
+            <div class="video">
+              <video src="<%= rails_blob_path(post.video) %>" type="video/mp4",controls></video>
+            </div>
+          <% end %>
+        </div> 
+        <div class="side-manual-text">
+          <div class="side-manual-title">
+            <%= post.title %>
+          </div>
+          <% if post.mark == true %>
+          <div class="side-manual-mark-text">
+            <span class="side-mark-text">既読</span>
+          </div>
+          <% end %>
+        </div>
+      </li>
+      <% end %>
+    <% end %>
+    </ul>
+  </div>
 </div>
 
 <%= render "shared/footer" %>

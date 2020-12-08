@@ -8,7 +8,7 @@ class BoardsController < ApplicationController
     if @board.save
       redirect_to root_path
     else
-      render :index
+      redirect_to root_path
     end
   end
 
@@ -18,7 +18,7 @@ class BoardsController < ApplicationController
       @board.destroy
       redirect_to root_path
     else
-      render :index
+      redirect_to root_path
     end
   end
 

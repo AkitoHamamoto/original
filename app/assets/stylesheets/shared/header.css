@@ -4,7 +4,16 @@
 
 .top-page-header {
   width: 100vw;
-  padding: 2vh 15vw;
+  height: 14vh;
+  padding: 1vh 3vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-page-header-second {
+  width: 100vw;
+  height: 17vh;
+  padding: 1vh 15vw;
   display: flex;
   flex-direction: column;
 }
@@ -13,36 +22,48 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.furima-icon {
-  width: 10vw;
-  margin-right: 10vw;
+  height: 50px;
 }
 
 .search-form {
-  width: 65vw;
-  height: 5vh;
-  display: flex;
-  margin-bottom: 5px;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid #999;
+  display: block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 2.3em;
+  width: 260px;
+  overflow: hidden;
 }
 
-.search-form>.input-box {
-  width: 100%;
-  height: 5vh;
-  padding-left: 10px;
+.search-form input[type="text"] {
+  border: none;
+  height: 2.0em;
 }
 
-.search-button {
-  width: 5vh;
-  border: 0;
+.search-form input[type="text"]:focus {
+  outline: 0;
+}
+
+.search-form input[type="submit"] {
   cursor: pointer;
-  background-color: #3ccace;
-  padding: 8px;
+  font-family: FontAwesome;
+  font-size: 1.3em;
+  border: none;
+  background: none;
+  color: #3879D9;
+  position: absolute;
+  width: 2.5em;
+  height: 2.5em;
+  right: 0;
+  top: -10px;
+  outline : none;
 }
 
-.search-icon {
-  width: 100%;
+#search-icon {
+  position: relative;
+  top: 4px;
 }
 
 .nav {
@@ -51,32 +72,42 @@
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
+  height: 300px;
   padding: 1vh 0;
 }
 
 .lists-left {
   display: flex;
   min-width: 200px;
-
+  margin-top: 12px;
 }
 
 .category-list {
   text-decoration: none;
-  margin-right: 3vw;
+  margin-right: 50px;
   color: #333333;
 }
 
-.brand-list {
-  text-decoration: none;
-  color: #333333;
+.menu-content {
+  display: none;
 }
+
+.menu-list {
+  text-decoration: none;
+  color: black;
+}
+
+.menu-list:hover {
+  color: rgb(90, 85, 85);
+}
+
 
 .lists-right {
   display: flex;
   list-style: none;
-  align-items: flex-end;
+  align-items: flex-start;
+  margin-top: 12px;
 }
-
 
 .user-nickname {
   text-decoration: none;
@@ -101,4 +132,16 @@
 .sign-up {
   text-decoration: none;
   color: #333333;
+}
+
+.post-new {
+  text-decoration: none;
+  color: black;
+  padding: 3px;
+  border: ridge 3px #474444a9;
+  background-color: #7e7b7bbb;
+}
+
+.post-new:hover {
+  color: rgb(100, 95, 95);
 }

@@ -1,26 +1,28 @@
-<%# CSS・・・assets/stylesheets/shared/header.css %>
 <header class='top-page-header'>
-  <div class='search-bar-contents'>
-    <%#= link_to image_tag(""), class:"furima-icon"), "/" %>
-    <%= form_with(url: search_post_path(:id), local: true, method: :get, class: "serch-form") do |f| %>
-      <%= f.text_field :keyword, placeholder: "manualを検索する", class: "search-input" %>
-      <%= f.submit "検索", class: "search-btn" %>
-    <% end %>
-  </div>
   <div class='nav'>
-    <ul class='lists-left'>
+    <ul class='lists-left' id= "menu-lists">
       <li><%= link_to 'MENU', "#", class: "category-list" %>
-        <ul>
-          <li><%= link_to 'TOP PAGE',  root_path %></li>
-          <li><%= link_to 'manual',  posts_path %></li>
+        <ul class="menu-content" id="menu">
+          <li><%= link_to 'TOP PAGE',  root_path, class:"menu-list" %></li>
+          <li><%= link_to 'manual',  posts_path, class:"menu-list" %></li>
         </ul>
       </li>
       <% if current_user.authority == true %>
-      <li><%= link_to '投稿する', new_post_path %></li>
+      <li><%= link_to '投稿する', new_post_path, class:"post-new" %></li>
       <% end %>
     </ul>
+    <div class='search-bar-contents'>
+      <%#= link_to image_tag(""), class:"furima-icon"), "/" %>
+      <%= form_with(url: search_post_path(:id), local: true, method: :get, class: "search-form") do |f| %>
+        <%= f.text_field :keyword, placeholder: "manualを検索する", class: "search-input" %>
+        <%= f.submit '', class: "search-btn" %>
+        <span class="material-icons" id="search-icon">
+            search
+        </span>
+      <% end %>
+    </div>
+
     <ul class='lists-right'>
-      <%# deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
       <% if user_signed_in? %>
         <li><%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
@@ -28,7 +30,6 @@
         <li><%= link_to 'ログイン', user_session_path, class: "login" %></li>
         <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
       <% end %>
-      <%# //deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
     </ul>
   </div>
 </header>

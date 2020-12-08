@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   def index
     @boards = Board.all
     @board = Board.new
@@ -30,7 +31,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:nickname, :image)
   end
 
-  def board_params
-    params.require(:board).permit(:text).merge(user_id: current_user.id)
-  end
 end

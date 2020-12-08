@@ -1,57 +1,68 @@
 <%= render "shared/second.header" %>
 
 <div class="main">
-  <%= form_with model: @post, local: true do |f| %>
+  <div class="new-post-content">
+    <%= form_with model: @post, local: true do |f| %>
 
-  <%#= render 'shared/error_messages', model: f.object %>
+    <div class="form-box">
+      <div class="form-header">
+        <h1>マニュアル情報入力</h1>
+      </div>
 
-  <div class="form-wrap">
-    <div class="form-header">
-      <h1>マニュアル情報入力</h1>
+      <%= render 'shared/error_messages', model: f.object %>
+
+      <div class="number-box">
+        <div class="box-name">
+          <p>テキストナンバー</p>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.number_field :number, min: 1, class: "text-number", id:"text-number-id" %>
+      </div>
+
+      <div class="title-box">
+        <div class="box-name">
+          <p>タイトル</p>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :title, class: "title-text", id:"title-name" %>
+      </div>
+      
+      <div class="video-box">
+        <div class="box-name">
+          <p>マニュアル動画</p>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.label :マニュアル動画をアップロードする %>
+        <%= f.file_field :video, class: "post-video", id:"post-video-id" %>
+      </div>
+
+      <div class="text-box">
+        <div class="box-name">
+          <p>説明</p>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :text, class: "post-text", id:"post-name" %>
+      </div>
+
+      <div class="file-box">
+        <p>関連資料</p>
+        <%= f.label :関連資料を選択する %>
+        <%= f.file_field :documents, multiple:true, id:"post-file" %>
+      </div>
+
+      <div class="image-box">
+        <p>サムネイル画像</p>
+        <%= f.label :サムネイル画像を選択する %>
+        <%= f.file_field :image, id:"post-image" %>
+      </div>
+
+      <div class="sell-btn-contents">
+        <%= f.submit "SEND" ,class:"sell-btn" %>
+      </div>
     </div>
 
-    <div class="title-box">
-      <p>テキストナンバー</p>
-      <span class="indispensable">必須</span>
-      <%= f.number_field :number, min: 1, class: "text-number", id:"text-number-id" %>
-    </div>
-
-    <div class="title-box">
-      <p>タイトル</p>
-      <span class="indispensable">必須</span>
-      <%= f.text_area :title, class: "title-text", id:"title-name" %>
-    </div>
-    
-    <div class="video-box">
-      <p>マニュアル動画</p>
-      <span class="indispensable">必須</span>
-      <%= f.file_field :video, class: "post-video", id:"post-video-id" %>
-    </div>
-    <div class="title-box">
-      <p>説明</p>
-      <span class="indispensable">必須</span>
-      <%= f.text_area :text, class: "post-text", id:"post-name" %>
-    </div>
-
-    <div class="file-box">
-      <p>関連資料</p>
-      <%= f.file_field :documents, multiple:true, id:"post-file" %>
-    </div>
-
-    <div class0="image-box">
-      <p>サムネイル画像</p>
-       <%= f.file_field :image, id:"post-image" %>
-    </div>
-
-    <div class="sell-btn-contents">
-      <%= f.submit "投稿する" ,class:"sell-btn" %>
-      <%=link_to 'もどる', "#", class:"back-btn" %>
-    </div>
-
+    <% end %>
   </div>
-
-  <% end %>
-
 </div>
 
 <%= render "shared/footer" %>
