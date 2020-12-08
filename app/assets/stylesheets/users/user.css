@@ -74,6 +74,61 @@ url('/fonts/public/HuiFont/HuiFontP109.svg#HuiFontP109') format('svg');
   border: 3px solid #ffb1b3;
 }
 
+/* ここ以下user.show */
+.users-information {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.user-box {
+  height: 385px;
+  width: 637px;
+  background-color: rgba(46, 44, 44, 0.904);
+  border-radius: 30px;
+  display: flex;
+  padding: 80px 40px;
+}
+
+.user-info {
+  height: 100%;
+  width: 55%;
+  color: #fff;
+  line-height: 3em;
+  padding-top: 5px;
+}
+
+
+.user-info-name {
+  font-size: 25px;
+  margin-bottom: 8px;
+  border-bottom: 2px solid;
+  padding-bottom: 5px;
+}
+
+.user-info-email {
+  font-size: 20px;
+}
+
+.user-info-birthday {
+  font-size: 20px;
+}
+
+.user-icon {
+  height: 100%;
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#user-icon {
+  font-size: 270px;
+  color: rgb(255, 251, 251);
+}
+
+/* ここ以上user.show */
 
 @media (max-width: 1000px) {
 

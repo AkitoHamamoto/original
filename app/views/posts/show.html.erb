@@ -2,10 +2,12 @@
 
 <div class="main-manual-show">
   <div class="manual-content-show">
+  <% if current_user.authority == true %>
     <ul class="post-btn">
       <li class="edit-btn"><%= link_to '編集', edit_post_path(@post.id),class: "post-red-btn" %></li>
       <li class="destroy-btn"><%= link_to '削除', post_path(@post.id), method: :delete, class:'post-destroy' %></li>
     </ul>
+  <% end %>
 
     <div class="video-content">
       <video src="<%= rails_blob_path(@post.video) %>" type="video/mp4" controls></video>
@@ -30,7 +32,7 @@
     <div class="file">
       <% if @post.documents.attached? %>
         <%# @post.documents.each do |document| %>
-        <%= link_to @post.documents %>
+          <% link_to @post.documents %>
           <span class="material-icons" id="text-file">
             text_snippet
             <%#= image_tag document %>

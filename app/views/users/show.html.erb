@@ -2,32 +2,31 @@
 
 <div class="main">
   <div class="users-information">
-    <h2 class="user-information-title">ユーザー情報</h2>
-    <%= link_to 'ユーザー情報を編集する', edit_user_registration_path  %>
+    <%#= link_to 'ユーザー情報を編集する', edit_user_registration_path  %>
     
-    <%#= render 'shared/error_messages', model: f.object %>
-    <span>users/show</span>
-   
-    <%# 商品の概要 %>
+    <%# ユーザーの概要 %>
     <div class="user-show">
+      <h1 class="user-information-title">ユーザー情報</h1>
       <div class="user-box">
-        <div class='user-img-content'>
-          <%#= image_tag @item.image ,class:"item-box-img" %>
+        <div class="user-info">
+          <h2 class="user-info-name">
+            <%= @user.nickname %>
+          </h2>
+          <div class="user-info-email">
+            <span>Email: <%= @user.email %></span>
+          </div>
+          <div class="user-info-birthday">
+            <span>Birthday: <%= @user.birth_date %></span>
+          </div>
         </div>
-        <h2 class="name">
-          <%= @user.nickname %>
-        </h2>
-        <div class="item-price-box">
-          <span class="item-price">
-            <%= @user.email %>
-          </span>
-          <span class="item-postage">
-            <%= @user.birth_date %>
+        <div class='user-icon'>
+          <span class="material-icons" id="user-icon">
+            account_box
           </span>
         </div>
       </div>
     </div>
-    <%# /商品の概要 %>
+    <%# /ユーザーの概要 %>
   </div>
 </div>
 

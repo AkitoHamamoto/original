@@ -358,6 +358,15 @@ form  {
   margin-left: 5px;
 }
 
+.side-manual-title {
+  height: 70%;
+}
+
+.side-manual-mark-text {
+  height: 30%;
+  color: #575353c7;
+}
+
 .file>img {
   height: 100%;
   width: 100%;
