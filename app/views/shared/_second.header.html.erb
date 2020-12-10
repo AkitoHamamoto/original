@@ -1,14 +1,16 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
 <header class='top-page-header-second'>
+  <div class="header-icon">
+    <%= link_to image_tag("4.png", class:"header-white-icon"), root_path %>
+  </div>
   <div class='nav'>
-    <ul class='lists-left' id="menu-lists">
-      <li><%= link_to 'MENU', "#", class: "category-list" %>
-        <ul class="menu-content" id="menu">
-          <li><%= link_to 'TOP PAGE',  root_path, class:"menu-list" %></li>
-          <li><%= link_to 'manual',  posts_path, class:"menu-list" %></li>
-        </ul>
-      </li>
-    </ul>
+    <div class='lists-left' id="menu-lists">
+      <%= link_to 'MENU', "#", class: "category-list" %>
+      <span class="menu-content" id="menu">
+        <%= link_to 'TOP PAGE',  root_path, class:"menu-list" %>
+        <%= link_to 'MANUAL',  posts_path, class:"menu-list" %>
+      </span>
+    </div>
     <ul class='lists-right'>
       <%# deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
       <% if user_signed_in? %>

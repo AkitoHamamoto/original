@@ -4,7 +4,7 @@
 <div class='form-wrap'>
   <div class='form-header'>
     <h1 class='form-header-text'>
-      会員情報入力
+      ユーザー情報入力
     </h1>
   </div>
 
@@ -15,7 +15,7 @@
       <label class="form-text">ニックネーム</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) original太郎", maxlength:"40" %>
+    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) sample1", maxlength:"40" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -70,14 +70,14 @@
 
   <div class="form-group">
     <div class='form-text-wrap'>
+      <%= f.check_box :authority, {}, "true", "false" %>
       <label class="form-text">編集権限を持つかどうか</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.check_box :authority, {}, "true", "false" %>
   </div>
   <div class="form-group">
     <h2 class='form-bottom-text'>
-      「会員登録」のボタンを押すことにより、
+      「会員登録」のボタンを押すことにより、<br>
       <span>利用規約</span>
       <br>に同意したものとみなします
     </h2>

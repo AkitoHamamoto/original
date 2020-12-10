@@ -4,18 +4,24 @@
 
 .top-page-header {
   width: 100vw;
-  height: 14vh;
+  height: 16vh;
   padding: 1vh 3vw;
   display: flex;
   flex-direction: column;
+  margin-bottom: 30px;
 }
 
 .top-page-header-second {
   width: 100vw;
-  height: 17vh;
-  padding: 1vh 15vw;
+  height: 20vh;
+  padding: 1vh 10vw;
   display: flex;
   flex-direction: column;
+}
+
+.over-top-header {
+  display: flex;
+  align-items: center;
 }
 
 .search-bar-contents {
@@ -79,12 +85,13 @@
 .lists-left {
   display: flex;
   min-width: 200px;
+  width: 300px;
   margin-top: 12px;
 }
 
 .category-list {
   text-decoration: none;
-  margin-right: 50px;
+  margin-right: 30px;
   color: #333333;
 }
 
@@ -95,6 +102,7 @@
 .menu-list {
   text-decoration: none;
   color: black;
+  margin-right: 10px;
 }
 
 .menu-list:hover {
@@ -107,6 +115,10 @@
   list-style: none;
   align-items: flex-start;
   margin-top: 12px;
+}
+
+.lists-right a:hover {
+  opacity: 0.8;
 }
 
 .user-nickname {
@@ -144,4 +156,27 @@
 
 .post-new:hover {
   color: rgb(100, 95, 95);
+}
+
+.header-white-icon {
+  width: 150px;
+  padding-top: 10px;
+}
+
+@media (max-width: 1000px) {
+  .top-page-header {
+    margin-bottom: 80px;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .top-page-header {
+    margin-bottom: 80px;
+  }
+
+  .lists-right {
+    margin: 0;
+  }
+
 }

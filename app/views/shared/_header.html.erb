@@ -1,16 +1,22 @@
 <header class='top-page-header'>
+  <div class="over-top-header">
+    <div class="header-icon">
+      <%= link_to image_tag("4.png", class:"header-white-icon"), root_path %>
+    </div>
+    <% if current_user.authority == true %>
+    <div class="post-new-box">
+      <%= link_to '投稿する', new_post_path, class:"post-new" %>
+    </div>
+    <% end %>
+  </div>
   <div class='nav'>
-    <ul class='lists-left' id= "menu-lists">
-      <li><%= link_to 'MENU', "#", class: "category-list" %>
-        <ul class="menu-content" id="menu">
-          <li><%= link_to 'TOP PAGE',  root_path, class:"menu-list" %></li>
-          <li><%= link_to 'manual',  posts_path, class:"menu-list" %></li>
-        </ul>
-      </li>
-      <% if current_user.authority == true %>
-      <li><%= link_to '投稿する', new_post_path, class:"post-new" %></li>
-      <% end %>
-    </ul>
+    <div class='lists-left' id="menu-lists">
+      <%= link_to 'MENU', "#", class: "category-list" %>
+      <span class="menu-content" id="menu">
+        <%= link_to 'TOP PAGE',  root_path, class:"menu-list" %>
+        <%= link_to 'MANUAL',  posts_path, class:"menu-list" %>
+      </span>
+    </div>
     <div class='search-bar-contents'>
       <%#= link_to image_tag(""), class:"furima-icon"), "/" %>
       <%= form_with(url: search_post_path(:id), local: true, method: :get, class: "search-form") do |f| %>

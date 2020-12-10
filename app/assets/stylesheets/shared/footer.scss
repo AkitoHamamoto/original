@@ -3,7 +3,7 @@
   width: 100vw;
   padding: 5vh 0;
   color: #FFF;
-  background-color: #272727;
+  background-color: black;
   text-align: center;
 }
 
@@ -13,7 +13,7 @@
   margin-bottom: 5vh;
 }
 
-.furima-details {
+.manualist-details {
   margin: 0 4vw;
 }
 
@@ -36,4 +36,18 @@
 
 .footer>p {
   font-size: 14px;
+}
+
+.manualist-icon {
+  width: 150px;
+}
+
+@media (max-width: 1000px) {
+}
+
+@media (max-width: 500px) {
+  .third {
+    display: none;
+  }
+
 }

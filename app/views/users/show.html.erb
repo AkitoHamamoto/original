@@ -1,7 +1,7 @@
 <%= render "shared/second.header" %>
 
 <div class="main">
-  <div class="users-information">
+  <div class="user-information">
     <%#= link_to 'ユーザー情報を編集する', edit_user_registration_path  %>
     
     <%# ユーザーの概要 %>
@@ -17,6 +17,15 @@
           </div>
           <div class="user-info-birthday">
             <span>Birthday: <%= @user.birth_date %></span>
+          </div>
+          <div class="user-info-authority">
+            <span>authority: 
+              <% if @user.authority == true %>
+                権限あり
+              <% else %>
+                権限なし  
+              <% end %>
+            </span>
           </div>
         </div>
         <div class='user-icon'>

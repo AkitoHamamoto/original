@@ -120,6 +120,11 @@ video {
   overflow: scroll;
 }
 
+.form-box {
+  height: 100%;
+  width: 100%;
+}
+
 .form-header{
   display: flex;
   align-items: center;
@@ -316,6 +321,15 @@ form  {
   border: solid 1px black;
 }
 
+.post-btn {
+  display: flex;
+}
+
+.post-edit-btn, .post-destroy-btn {
+  margin-left: 5px;
+  font-size: 20px;
+}
+
 .main-manual-show {
   height: 100vh;
   width: 100vw;
@@ -421,8 +435,9 @@ form  {
     justify-content: center;
   }
 
-  .new-post-conten{
-    width: 95%;
+  .new-post-content{
+    width: 95vw;
+    display: block;
   }
 
   .number-box {
@@ -435,5 +450,19 @@ form  {
   label {
     width: 300px;
   }
+
+  .video-box>label,.file-box>label, .file-box>label, .image-box>label {
+    width: 300px;
+  }
+
+  .title-box>textarea, .text-box>textarea {
+    width: 300px;
+  }
+
+  .number-box>input[type="number"] {
+    width: 300px;
+  }
+
+
 
 }
