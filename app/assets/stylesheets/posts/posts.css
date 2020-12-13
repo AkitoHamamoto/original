@@ -190,7 +190,8 @@ form  {
   margin-bottom: 5px;
 }
 
-.text-box textarea {
+
+.text-box textarea  {
   border: 5px solid #000000;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -364,8 +365,8 @@ form  {
   width: 60%;
 }
 
-.side-video>img {
-  width: 60%;
+.video-image>img {
+  width: 100%;
 }
 
 .side-manual-text {
@@ -388,14 +389,14 @@ form  {
 
 .form-group-mark {
   height: 70px;
-  width: 80px;
+  width: 70px;
   display: flex;
   align-items: center;
 }
 
 .form-group-mark label {
   height: 30px;
-  width: 40px;
+  width: 80px;
   font-size: 20px;
 }
 

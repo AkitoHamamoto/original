@@ -1,0 +1,32 @@
+// Place all the styles related to the shops controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new-shop-content{
+  display: flex;
+  justify-content: center;
+  height: 95%;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 0;
+  overflow: scroll;
+}
+
+.form-box {
+  height: 100%;
+  width: 100%;
+
+  form {
+    display: block;
+  }
+  span {
+    display: inline;
+  }
+}
+
+.shop-image-box {
+  padding-bottom: 20px;
+  width: 460px;
+  margin-bottom: 5px;
+  position: relative;
+}

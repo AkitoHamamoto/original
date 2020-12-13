@@ -37,6 +37,46 @@
     </div>
     <%# /ユーザーの概要 %>
   </div>
+
+  <div class="shop-infomrmation">
+    <div class="shop-box">
+      <div class="shop-image">
+        <span>店舗画像</span>
+        <% if @shop.image.attached? %>
+          <span><%= image_tag @shop.image %></span>
+        <% else %>
+          <span>no image</span>
+        <% end %>
+      </div>
+      <div class="shop-name">
+        <span>店舗画像</span>
+        <span><%= @shop.name %></span>
+      </div>
+      <div class="shop-PostalCode">
+        <span>店舗名</span>
+        <span><%= @shop.postal_code %></span>
+      </div>
+      <div class="shop-address">
+        <span>店舗住所</span>
+        <span><%= @shop.address %></span>
+      </div>
+      <div class="shop-PhoneNumber">
+        <span>電話番号</span>
+        <span><%= @shop.phone_number %></span>
+      </div>
+      <div class="shop-text">
+        <span>詳細情報</span>
+        <span><%= @shop.text %></span>
+      </div>
+    </div>
+
+    <div class="shop-infomation">
+      <div class="google-map" id="target">
+      </div>
+      <input type="text" id="address">
+      <button id="search">Search</button>
+    </div>
+  </div>
 </div>
 
 <%= render "shared/footer" %>

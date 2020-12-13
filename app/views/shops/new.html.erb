@@ -1,0 +1,76 @@
+<%= render "shared/second.header" %>
+
+<div class="main">
+
+  
+  <div class="new-shop-content">
+
+    <%= form_with model:@shop, local: true do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
+    <div class="form-box">
+
+      <div class="form-header">
+        <h1>店舗情報入力</h1>
+      </div>
+
+      <div class="image-box">
+        <p>店舗画像</p>
+        <%= f.label :サムネイル画像を選択する %>
+        <%= f.file_field :image, id:"post-image" %>
+      </div>
+
+      <div class="title-box">
+        <div class="box-name">
+          <p>店舗名</p>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :name, class: "title-text", id:"title-name" %>
+      </div>
+
+      <div class="title-box">
+        <div class="box-name">
+          <p>郵便番号</p>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :postal_code, class: "title-text", id:"title-name" %>
+      </div>
+
+      <div class="title-box">
+        <div class="box-name">
+          <p>住所</p>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :address, class: "title-text", id:"title-name" %>
+      </div>
+
+
+       <div class="title-box">
+        <div class="box-name">
+          <p>電話番号</p>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :phone_number, class: "title-text", id:"title-name" %>
+      </div>
+
+
+      <div class="text-box">
+        <div class="box-name">
+          <p>詳細情報</p>
+        </div>
+        <%= f.text_area :text, class: "post-text", id:"post-name" %>
+      </div>
+
+      <div class="sell-btn-contents">
+        <%= f.submit "SEND" ,class:"sell-btn" %>
+      </div>
+
+      <%= link_to '編集する', edit_shop_path(:id) %>
+
+
+    </div>
+    <% end %>
+  </div>
+  
+</div>
+
+<%= render "shared/footer" %>

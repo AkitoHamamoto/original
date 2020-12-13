@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_many :boards
   has_many :plans
 
+  has_one_attached :avatar
+
 
   with_options presence: true do
     validates :nickname

@@ -24,7 +24,7 @@
     <div class="form-group-mark"> 
       <%= form_with model: @post do |f| %>
         <%= f.check_box :mark ,{}, "true", "false" %>
-        <%= f.label :既読 %>
+        <%= f.label :check %>
         <%= f.submit "送信" %>
       <% end %> 
     </div>
@@ -64,7 +64,7 @@
           </div>
           <% if post.mark == true %>
           <div class="side-manual-mark-text">
-            <span class="side-mark-text">既読</span>
+            <span class="side-mark-text">check</span>
           </div>
           <% end %>
         </div>

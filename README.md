@@ -82,3 +82,14 @@
 | Column | Type   | Option       |
 | ------ | ------ | ------------ |
 | text   | string | null:false   |
+
+
+### shops テーブル
+
+| Column       | Type    | Option       |
+| ------------ | ------- | ------------ |
+| name         | string  | null:false   |
+| postal_code  | integer | null:false   |
+| address      | string  | null:false   |
+| phone_number | string  | null:false   |
+| text         | text    | null:false   |
