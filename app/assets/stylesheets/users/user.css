@@ -78,7 +78,7 @@ h1 {
 
 /* ここ以下user.show */
 .user-information {
-  height: 100vh;
+  height: 80vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -140,15 +140,98 @@ h1 {
   color: rgb(255, 251, 251);
 }
 
+
 .shop-information {
-  height: 50vh;
+  height: 80vh;
   width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.shop-header {
+  font-size: 35px;
+  margin-bottom: 10px;
+  color: rgba(56, 54, 54, 0.877);
+}
+
+.shop-box {
+  height: 385px;
+  width: 637px;
+  background-color: rgba(46, 44, 44, 0.904);
+  border-radius: 30px;
+  display: flex;
+  padding: 50px 40px;
+}
+
+.shop-info {
+  height: 100%;
+  width: 55%;
+  color: #fff;
+  line-height: 3em;
+  padding-top: 5px;
+}
+
+.shop-name {
+  font-size: 25px;
+  margin-bottom: 8px;
+  border-bottom: 2px solid;
+  padding-bottom: 5px;
+}
+
+.shop-image {
+  height: 100%;
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-image>img {
+  height: 80%;
+  border-radius: 20px;
+}
+
+.shop-map {
+  height: 50vh;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.shop-map>input {
+  width: 50%;
 }
 
 #target {
-  width: 550px;
-  height: 200px;
+  width: 100%;
+  height: 500px;
 }
+
+.flip {
+  height: 80vh;
+  width: 100vw;
+  animation: flip 5s linear infinite;
+  transform-style: preserve-3d;
+  margin-top: 70px;
+}
+
+@keyframes flip {
+  0%   { transform:rotateX(0deg);}
+  100% { transform:rotateX(360deg); }
+}
+
+.front, .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateX(180deg);
+}
+
 
 /* ここ以上user.show */
 
@@ -157,6 +240,9 @@ h1 {
     text-align: center;
   }
 
+  .shop-map {
+    width: 100%;
+  }
 }
 @media (max-width: 500px) {
   .user-show {
@@ -180,6 +266,21 @@ h1 {
   }
 
   .user-icon {
+    display: none;
+  }
+
+  .shop-show {
+    margin-top: 50px;
+    width: 90%;
+  }
+
+  .shop-box {
+    width: 100%;
+    padding: 10px;
+    padding-left: 40px;
+  }
+
+  .shop-image {
     display: none;
   }
 }

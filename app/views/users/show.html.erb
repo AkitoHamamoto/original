@@ -1,82 +1,91 @@
 <%= render "shared/second.header" %>
 
 <div class="main">
-  <div class="user-information">
-    <%#= link_to 'ユーザー情報を編集する', edit_user_registration_path  %>
-    
-    <%# ユーザーの概要 %>
-    <div class="user-show">
-      <h1 class="user-information-title">ユーザー情報</h1>
-      <div class="user-box">
-        <div class="user-info">
-          <h2 class="user-info-name">
-            <%= @user.nickname %>
-          </h2>
-          <div class="user-info-email">
-            <span>Email: <%= @user.email %></span>
-          </div>
-          <div class="user-info-birthday">
-            <span>Birthday: <%= @user.birth_date %></span>
-          </div>
-          <div class="user-info-authority">
-            <span>authority: 
-              <% if @user.authority == true %>
-                権限あり
-              <% else %>
-                権限なし  
-              <% end %>
-            </span>
-          </div>
-        </div>
-        <div class='user-icon'>
-          <span class="material-icons" id="user-icon">
-            account_box
-          </span>
-        </div>
-      </div>
-    </div>
-    <%# /ユーザーの概要 %>
-  </div>
 
-  <div class="shop-infomrmation">
-    <div class="shop-box">
-      <div class="shop-image">
-        <span>店舗画像</span>
-        <% if @shop.image.attached? %>
-          <span><%= image_tag @shop.image %></span>
-        <% else %>
-          <span>no image</span>
-        <% end %>
-      </div>
-      <div class="shop-name">
-        <span>店舗画像</span>
-        <span><%= @shop.name %></span>
-      </div>
-      <div class="shop-PostalCode">
-        <span>店舗名</span>
-        <span><%= @shop.postal_code %></span>
-      </div>
-      <div class="shop-address">
-        <span>店舗住所</span>
-        <span><%= @shop.address %></span>
-      </div>
-      <div class="shop-PhoneNumber">
-        <span>電話番号</span>
-        <span><%= @shop.phone_number %></span>
-      </div>
-      <div class="shop-text">
-        <span>詳細情報</span>
-        <span><%= @shop.text %></span>
+  <div class="flip">
+    <div class="front">
+      <div class="user-information">    
+        <%# ユーザーの概要 %>
+        <div class="user-show">
+          <h1 class="user-information-title">ユーザー情報</h1>
+          <div class="user-box">
+            <div class="user-info">
+              <h2 class="user-info-name">
+                <%= @user.nickname %>
+              </h2>
+              <div class="user-info-email">
+                <span>Email: <%= @user.email %></span>
+              </div>
+              <div class="user-info-birthday">
+                <span>Birthday: <%= @user.birth_date %></span>
+              </div>
+              <div class="user-info-authority">
+                <span>authority: 
+                  <% if @user.authority == true %>
+                    権限あり
+                  <% else %>
+                    権限なし  
+                  <% end %>
+                </span>
+              </div>
+            </div>
+            <div class='user-icon'>
+              <span class="material-icons" id="user-icon">
+                account_box
+              </span>
+            </div>
+          </div>
+        </div>
+        <%# /ユーザーの概要 %>
       </div>
     </div>
 
-    <div class="shop-infomation">
-      <div class="google-map" id="target">
+    <div class="back">
+      <div class="shop-information">
+        <div class="shop-show">
+          <h1 class="shop-header">店舗情報</h1>
+          <div class="shop-box">
+            <div class="shop-info">
+              <div class="shop-name">
+                <span><%= @shop.name %></span>
+              </div>
+              <div class="shop-PostalCode">
+                <span>Postal Code: <%= @shop.postal_code %></span>
+              </div>
+              <div class="shop-address">
+                <span>Address: <%= @shop.address %></span>
+              </div>
+              <div class="shop-PhoneNumber">
+                <span>TEL: <%= @shop.phone_number %></span>
+              </div>
+              <div class="shop-text">
+                <span>Info: <%= @shop.text %></span>
+              </div>
+            </div>
+            <% if @shop.image.attached? %>
+              <div class="shop-image">
+                <%= image_tag @shop.image %>
+              </div>
+            <% else %>
+              <div class='user-icon'>
+                <span class="material-icons" id="user-icon">
+                  account_box
+                </span>
+              </div>
+            <% end %>
+          </div>
+        </div>
       </div>
-      <input type="text" id="address">
-      <button id="search">Search</button>
     </div>
   </div>
+
+  <div class="shop-map">
+    <div>場所を地図で確認する</div>
+    <input type="text" id="address" value=<%= @shop.address %>>
+    <button id="search">Search</button>
+    <div class="google-map" id="target"></div>
+  </div>
+
 </div>
 
 <%= render "shared/footer" %>

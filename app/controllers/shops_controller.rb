@@ -1,5 +1,6 @@
 class ShopsController < ApplicationController
   before_action :find_shop, only: [:edit, :update]
+  before_action :move_to_index, only: [:new, :edit]
 
   def new
     @shop = Shop.new
@@ -36,6 +37,10 @@ class ShopsController < ApplicationController
 
   def find_shop
     @shop = Shop.last
+  end
+
+  def move_to_index
+    redirect_to root_path if current_user.authority == false 
   end
 
 end

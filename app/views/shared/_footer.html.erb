@@ -20,7 +20,9 @@
         <% end %>
         <li><%= link_to '掲示板', root_path, class: "footer-link" %></li>
         <li><%= link_to 'マニュアル一覧', posts_path, class: "footer-link" %></li>
+        <% if user_signed_in? && current_user.authority == true %>
         <li><%= link_to '店舗情報入力ページ', new_shop_path, class: "footer-link" %></li>
+        <% end %>
       </ul>
     </div>
   </div>
