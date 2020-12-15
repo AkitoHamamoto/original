@@ -9,6 +9,7 @@ class Post < ApplicationRecord
     validates :number,  uniqueness: true, format: { with: PRICE_REGEX, message: 'テキストナンバーは半角数字のみ保存可能です' }
     validates :title
     validates :text
+    validates :video
   end
 
   def self.search(search)

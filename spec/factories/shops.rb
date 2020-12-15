@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :shop do
     name           { 'sample' }
-    postal_code      { '334-5545' }
+    postal_code    { '334-5545' }
     address        { 'sample' }
     phone_number   { '09034532345' }
     text           { 'sample' }
