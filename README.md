@@ -12,48 +12,10 @@
 
 ### Association
 
-- has_many :room_users
-- has_many :rooms, through: room_users
-- has_many :messages
 - has_many :posts
 - has_many :boards
+- has_many :plans
 
-## rooms テーブル
-
-| Column | Type   | Option       |
-| ------ | ------ | ------------ |
-| name   | string | null:false   |
-
-### Association
-
-- has_many :room_users
-- has_many :users, through: room_users
-- has_many :messages
-
-## room_users テーブル
-
-| Column | Type       | Option                        |
-| ------ | ---------- | ----------------------------- |
-| user   | references | null:false, foreign_key: true |
-| room   | references | null:false, foreign_key: true |
-
-### Association
-
-- belongs_to :room
-- belongs_to :user
-
-### messages テーブル
-
-| Column  | Type       | Option                        |
-| ------- | ---------- | ----------------------------- |
-| content | string     | null:false                    |
-| user    | references | null:false, foreign_key: true |
-| room    | references | null:false, foreign_key: true |
-
-### Association
-
-- belongs_to :room
-- belongs_to :user
 
 ### posts テーブル
 
@@ -83,6 +45,7 @@
 | ------ | ------ | ------------ |
 | text   | string | null:false   |
 
+- belongs_to :user
 
 ### shops テーブル
 

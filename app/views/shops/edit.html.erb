@@ -24,7 +24,7 @@
           <p>店舗名</p>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :name, class: "title-text", id:"title-name" %>
+        <%= f.text_area :name, class: "shop-name", id:"shop-name" %>
       </div>
 
       <div class="title-box">
@@ -32,7 +32,7 @@
           <p>郵便番号</p>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :postal_code, class: "title-text", id:"title-name" %>
+        <%= f.text_area :postal_code, class: "shop-postal-code", id:"shop-postal-code" %>
       </div>
 
       <div class="title-box">
@@ -40,7 +40,7 @@
           <p>住所</p>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :address, class: "title-text", id:"title-name" %>
+        <%= f.text_area :address, class: "shop-address", id:"shop-address" %>
       </div>
 
 
@@ -49,7 +49,7 @@
           <p>電話番号</p>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :phone_number, class: "title-text", id:"title-name" %>
+        <%= f.text_area :phone_number, class: "shop-phone-number", id:"shop-phone-number" %>
       </div>
 
 
@@ -57,12 +57,15 @@
         <div class="box-name">
           <p>詳細情報</p>
         </div>
-        <%= f.text_area :text, class: "post-text", id:"post-name" %>
+        <%= f.text_area :text, class: "shop-text", id:"shop-text" %>
       </div>
 
       <div class="sell-btn-contents">
         <%= f.submit "SEND" ,class:"sell-btn" %>
       </div>
+
+      <%= link_to '編集する', edit_shop_path(:id) %>
+
 
     </div>
     <% end %>

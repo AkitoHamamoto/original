@@ -10,6 +10,9 @@
         <li><%= link_to 'ガイド', "#", class: "footer-link" %></li>
         <li><%= link_to 'ロゴ利用ガイドライン', "#", class: "footer-link" %></li>
         <li><%= link_to 'お知らせ', "#", class: "footer-link" %></li>
+        <% if user_signed_in? && current_user.authority == true %>
+        <li><%= link_to '店舗情報入力ページ', new_shop_path, class: "footer-link" ,id:"shop_input"%></li>
+        <% end %>
       </ul>
     </div>
     <div class='manualist-details third'>

@@ -47,22 +47,43 @@
           <div class="shop-box">
             <div class="shop-info">
               <div class="shop-name">
+              <% if @shop.present? %>
                 <span><%= @shop.name %></span>
+              <% else %>
+                <span>no info</span>
+              <% end %>
               </div>
               <div class="shop-PostalCode">
+              <% if @shop.present? %>
                 <span>Postal Code: <%= @shop.postal_code %></span>
+              <% else %>
+                <span>Postal Code: no info</span>
+              <% end %>
               </div>
               <div class="shop-address">
+              <% if @shop.present? %>
                 <span>Address: <%= @shop.address %></span>
+              <% else %>
+                <span>Address: no info</span>
+              <% end %>
               </div>
               <div class="shop-PhoneNumber">
+              <% if @shop.present? %>
                 <span>TEL: <%= @shop.phone_number %></span>
+              <% else %>
+                <span>TEL: no info</span>
+              <% end %>
               </div>
               <div class="shop-text">
-                <span>Info: <%= @shop.text %></span>
+                <div>Info:</div>
+                <% if @shop.present? %>
+                  <div><%=safe_join(@shop.text.split("\n"),tag(:br))%></div>
+                <% else %>
+                  <div>no info</div>
+                <% end %>
               </div>
             </div>
-            <% if @shop.image.attached? %>
+            <% if @shop.present? && @shop.image.attached?  %>
               <div class="shop-image">
                 <%= image_tag @shop.image %>
               </div>
@@ -79,12 +100,14 @@
     </div>
   </div>
 
+<% if @shop.present? %>
   <div class="shop-map">
     <div>場所を地図で確認する</div>
     <input type="text" id="address" value=<%= @shop.address %>>
     <button id="search">Search</button>
     <div class="google-map" id="target"></div>
   </div>
+<% end %>
 
 </div>
 

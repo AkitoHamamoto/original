@@ -14,7 +14,6 @@ function initMap() {
         alert('Failed: ' + status);
         return;
       }
-      // results[0].geometry.location
       if (results[0]) {
         new google.maps.Map(target, {
           center: results[0].geometry.location,

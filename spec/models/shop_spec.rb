@@ -25,6 +25,18 @@ RSpec.describe Shop, type: :model do
         expect(@shop.errors.full_messages).to include("Postal code can't be blank")
       end
 
+      it 'postal_codeが数字のみ出なければ登録できない' do
+        @shop.postal_code = '123-aa11'
+        @shop.valid?
+        expect(@shop.errors.full_messages).to include("Postal code 郵便番号には(-)を含む7桁の数字を入力してください")
+      end
+
+      it 'postal_codeが数字のみでも(-)が含まれていないと登録できない' do
+        @shop.postal_code = '1234567'
+        @shop.valid?
+        expect(@shop.errors.full_messages).to include("Postal code 郵便番号には(-)を含む7桁の数字を入力してください")
+      end
+
       it 'adressが空だと登録できない' do
         @shop.address = ''
         @shop.valid?

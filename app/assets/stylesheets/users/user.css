@@ -46,7 +46,7 @@ h1 {
 }
 
 
-@font-face {
+/* @font-face {
   font-family: 'HuiFontP109';
   src:url('/fonts/public/HuiFont/HuiFontP109.eot');
   src:url('/fonts/public/HuiFont/HuiFontP109.eot?#iefix') format('embedded-opentype'), 
@@ -55,9 +55,9 @@ h1 {
   url('/fonts/public/HuiFont/HuiFontP109.svg#HuiFontP109') format('svg');
   font-weight: normal;
   font-style: normal;
-}
+} */
 .board-content, .plan-content {
-  font-family: HuiFontP109;
+  /* font-family: HuiFontP109; */
   color: #fff;
   background-color: #2c581de0;
   margin: 10px auto;
@@ -176,6 +176,10 @@ h1 {
   margin-bottom: 8px;
   border-bottom: 2px solid;
   padding-bottom: 5px;
+}
+
+.shop-text {
+  display: flex;
 }
 
 .shop-image {

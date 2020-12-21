@@ -18,7 +18,7 @@
     </div>
 
     <div class="text-content">
-      <%= @post.text %>
+      <%=safe_join(@post.text.split("\n"),tag(:br))%>
     </div>
 
     <div class="form-group-mark"> 

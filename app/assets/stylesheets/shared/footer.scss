@@ -42,12 +42,20 @@
   width: 150px;
 }
 
+#shop_input {
+  display: none;
+}
+
 @media (max-width: 1000px) {
 }
 
 @media (max-width: 500px) {
   .third {
     display: none;
+  }
+
+  #shop_input {
+    display: block;
   }
 
 }

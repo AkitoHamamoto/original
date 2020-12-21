@@ -1,9 +1,11 @@
 class ShopsController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_shop, only: [:edit, :update]
   before_action :move_to_index, only: [:new, :edit]
 
   def new
     @shop = Shop.new
+    @shops = Shop.all
   end
 
   def create

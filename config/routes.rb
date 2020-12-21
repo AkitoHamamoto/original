@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'users/index'
   root to: 'users#index'
-  resources :users, only:[:index, :edit, :show, :update, :create, :new]
+  resources :users, only:[:index, :show]
   resources :posts do
     member do
       get 'search'

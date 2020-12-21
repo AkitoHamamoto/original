@@ -6,7 +6,7 @@
 
     <div class="form-box">
       <div class="form-header">
-        <h1>マニュアル情報入力</h1>
+        <h1>マニュアル情報編集</h1>
       </div>
 
       <%= render 'shared/error_messages', model: f.object %>
@@ -41,7 +41,7 @@
           <p>説明</p>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :text, class: "post-text", id:"post-name" %>
+        <%= f.text_area :text, class: "post-text", id:"post-text" %>
       </div>
 
       <%# <div class="file-box"> %>
