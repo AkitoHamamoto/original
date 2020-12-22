@@ -33,14 +33,14 @@ h1 {
 }
 
 
-.buy-red-btn {
+.board-btn,.plan-btn {
   background-color: black;
   color: azure;
   height: 60px;
   width: 50px;
 }
 
-.buy-red-btn:hover{
+.board-btn:hover, .plan-btn:hover{
   cursor: pointer;
   background-color: rgb(82, 79, 79);
 }
