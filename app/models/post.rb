@@ -2,7 +2,6 @@ class Post < ApplicationRecord
   belongs_to :user
   has_one_attached :video
   has_one_attached :image
-  has_many_attached  :documents
 
   with_options presence: true do
     PRICE_REGEX = /\A[0-9]+\z/.freeze

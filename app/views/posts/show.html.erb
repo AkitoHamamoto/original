@@ -28,18 +28,6 @@
         <%= f.submit "送信" %>
       <% end %> 
     </div>
-
-    <div class="file">
-      <% if @post.documents.attached? %>
-        <%# @post.documents.each do |document| %>
-          <% link_to @post.documents %>
-          <span class="material-icons" id="text-file">
-            text_snippet
-            <%#= image_tag document %>
-          </span>
-        <%# end %>
-      <% end %>
-    </div>
   </div>
 
   <div class="side-manual-lists">
