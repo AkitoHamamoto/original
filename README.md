@@ -3,8 +3,8 @@
 ## アプリケーション概要
 - このアプリケーションはアルバイトの指導マニュアル動画を管理できるアプリケーションです。
 
-## URL
-[heroku](https://original-32086.herokuapp.com/)
+## 本番環境
+[herokuURL](https://original-32086.herokuapp.com/)
 
 ## 利用方法
 - MANUALページに遷移していただき"投稿する"というリンクから動画の投稿ができます。
